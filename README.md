@@ -64,3 +64,46 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+## hints
+
+php artisan make:migration create_employees_table
+[
+$table->id();
+$table->string('name');
+$table->string('address');
+$table->string('mobile');
+$table->string('photo',100);
+$table->timestamps();
+]
+
+php artisan make:controller EmployeeController --resource
+
+php artisan make:model Employee
+
+
+in the model part[
+use HasFactory;
+protected $table ='employees';
+protected $primarykey= 'id';
+protected $fillable=['name','address','mobile','photo']; 
+]
+
+
+
+controller(index.php)
+$employees=Employee::all();
+return view
+
+
+yii::
+composer create-project --prefer-dist yiisoft/yii2-app-basic name
+composer create-project laravel/laravel name
+
+
+php artisan migrate --path=database/migrations/2024_01_02_073614_create_employees_table.php
+
+php artisan storage:link
+
+
